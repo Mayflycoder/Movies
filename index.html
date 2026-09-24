@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <meta name="description" content="A personal movie vault for tracking liked thrillers and finding the next watch." />
+  <title>Movie Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Movie Vault home">
+      <span class="brand-mark">MV</span>
+      <span>Movie Vault</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#next">Next up</a>
+      <a href="#liked">Liked</a>
+      <a href="#subscriptions">Subscriptions</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">PERSONAL MOVIE MATCHER</p>
+        <h1>Find the next thriller worth your time.</h1>
+        <p class="hero-text">
+          Built around movies you already liked: murder mysteries, investigations,
+          deceptive characters, psychological suspense and strong reveals.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#next">See next picks</a>
+          <a class="button ghost" href="#liked">Browse liked movies</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="score-ring">
+          <span class="score-value">7+</span>
+          <span class="score-label">IMDb only</span>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="likedCount">0</strong><span>Liked movies</span></div>
+          <div><strong id="serviceCount">0</strong><span>Subscriptions</span></div>
+          <div><strong>2</strong><span>Languages</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rule-strip">
+      <div class="shell rule-grid">
+        <div><span>01</span><strong>IMDb above 7.0</strong></div>
+        <div><span>02</span><strong>English or Hindi only</strong></div>
+        <div><span>03</span><strong>Indian titles need Hindi audio</strong></div>
+        <div><span>04</span><strong>Your subscriptions first</strong></div>
+      </div>
+    </section>
+
+    <section id="next" class="section shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CURATED FOR YOU</p>
+          <h2>What to watch next</h2>
+        </div>
+        <p class="section-note">Availability last checked Sep 24, 2026. Streaming catalogs can change.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="recommendationFilters" aria-label="Recommendation filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="English">English</button>
+          <button class="chip" data-filter="Hindi">Hindi</button>
+        </div>
+      </div>
+
+      <div id="recommendationGrid" class="movie-grid recommendation-grid"></div>
+    </section>
+
+    <section id="liked" class="section shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR TASTE PROFILE</p>
+          <h2>Watched & liked</h2>
+        </div>
+        <div class="search-wrap">
+          <label class="sr-only" for="movieSearch">Search liked movies</label>
+          <input id="movieSearch" type="search" placeholder="Search liked movies…" autocomplete="off" />
+        </div>
+      </div>
+
+      <div id="likedGrid" class="movie-grid"></div>
+      <p id="emptyState" class="empty-state" hidden>No matching movie found.</p>
+    </section>
+
+    <section id="subscriptions" class="section shell">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">AVAILABLE TO YOU</p>
+          <h2>Your subscriptions</h2>
+        </div>
+      </div>
+      <div id="servicesGrid" class="services-grid"></div>
+    </section>
+
+    <section class="section shell preference-card">
+      <div>
+        <p class="eyebrow">CURRENT MATCH PROFILE</p>
+        <h2>The pattern behind your favorites</h2>
+      </div>
+      <p>
+        Crime and mystery first. You consistently respond well to investigations,
+        conflicting versions of events, hidden motives, psychological pressure and
+        late-story revelations. Dark comedy and relationship drama work when the
+        mystery remains strong.
+      </p>
+      <div class="preference-tags">
+        <span>Murder mystery</span>
+        <span>Investigation</span>
+        <span>Psychological thriller</span>
+        <span>Unreliable narrative</span>
+        <span>Strong twist</span>
+        <span>Dark crime</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <span>Movie Vault</span>
+    <span>Personal tracker • Static GitHub + Netlify site</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
